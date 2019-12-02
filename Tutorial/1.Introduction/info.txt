@@ -1,0 +1,3 @@
+#Make the file executable
+chmod a+rx my-first-script.sh
+./my-first-script.sh

@@ -1,0 +1,23 @@
+#!/bin/sh = This tells UNIx that the file is to executed by /bin/sh.
+If using GNU/Linux, /bin/sh is normally a symbolic link to bash. That means, we can also write #!/bin/bash instead of #!/bin/sh
+
+# This marks the line as a comment
+The only exception is the very first line i.e. #!
+
+# Similarly, a Perl script may start with line #!/usr/vin/perl, to tell shell that programs follows should be executed by perl.
+
+# Third line, echo, which has two params. 
+
+# To make the file executable, we need to run
+chmod 755 first.sh
+./first.sh
+
+# Event if we put multiple spaces between Hello and World, in the end, it will only show 1 space between them.
+[prashik@prashik-linux 3.AFirstScript]$ ./first.sh 
+Hello World
+Hello 		World
+# echo this time only have one argument, i.e. a string "Hello 		World". And it just prints that out.
+# Shell parses the arguments BEFORE passing them on to the program being called. In this case, it strips the quotes but passes the string as one argument.
+
+
+#We make the second file first2.sh

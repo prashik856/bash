@@ -1,0 +1,31 @@
+There should must be no spaces around "=" sign when assigning a variable.
+VAR=value works;
+VAR = value doesn't.
+In first case, shell sees "=" and assumes assignment. When we use the second case, due to space, shell assumes VAR as a command and tries to execute it.
+
+We can try "MY_MESSAGE=Hello World", in this case, shell will assign value of Hello to MY_MESSAGE and try to execute "world" command.
+Due to this, quotes are important.
+
+Shell does not care about the type of variables. It may store string, integers, real numbers, etc.
+Let's try to add 1 to string.
+The external program "expr" only expects numbers.
+
+We need to properly excape special characters to avoid interpretation by the shell.
+We can interactively set variable (ask input from the user).
+"read" reads a line from standard input into the variable supplied.
+Due to quotes applied, even if space is applied, the output is displayed correctly.
+
+Scope of Variables:
+Variables in shell do not have to be declared. If we try to read an undeclared variables, the result is empty string.
+Fot this, we usually use "export"
+Now, if we set the value of any variable outside the script and use it inside the script, it won't work. This is because a new shell is always spawed to run the script which won't recognize the variable defined in the other shell.
+To recognize this externally defined variable, we need a command called 'export'.
+Thing to notice here is, since the script is ran by another shell, the value of the variable is destryed. So that value is no longer available, the value is again set back to export value.
+In order to receive environment changes back from the script, we must source the script - this effectively runs the script within our own interactive shell, instead of spawning another shell to run it.
+We can do this via the "." dot command.
+. ./myvar2.sh
+This is how our .profile and .bash_profile file works. In this case, we don't need "export" since we are running the script in the same shell.
+
+The shell now knows that we are referring to the variable USER_NAME and that we want it suffixed with "_file". 
+
+Also note the quotes around "${USER_NAME}_file" - if the user entered "Steve Parker" (note the space) then without the quotes, the arguments passed to touch would be Steve and Parker_file - that is, we'd effectively be saying touch Steve Parker_file, which is two files to be touched, not one. The quotes avoid this

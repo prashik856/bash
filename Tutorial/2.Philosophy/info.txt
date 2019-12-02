@@ -1,0 +1,4 @@
+cat /tmp/myfile | grep "mystring"
+grep "mystring" /tmp/myfile
+# In the above commands, the grep command will run faster.
+# In the first command, OS has to load two bin files, i.e. /bin/grep and /bin/cat, which have some size of their own. This affects a lot, when we run them in a loop.
