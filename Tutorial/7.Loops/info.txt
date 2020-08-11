@@ -1,0 +1,8 @@
+For loops and while loops.
+
+1) For loops
+There is always difference between *, \* and "*". Take care of that.
+
+2) While Loops
+While loop using case statements.
+It will read from "myfile". For this, each line in "myfile" should end in a newline character.

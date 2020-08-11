@@ -1,0 +1,56 @@
+Test is used by virtually every shell script written. "test" is not often called directly. "test" is more frequently called as "[". "[" is symbolic link to test. 
+
+So that means, whenever we use "[" in a script, we need to have spaces between them (else, it will have problem interpreting that).
+
+so, if[$foo = "bar" ] will not work as it will be interpreted as if test$foo = bar, which is "]" without beginning "[".
+
+Some shells accept "==" for string comparisons. Since it is not portable, a single "=" should be used for strings. or "-eq" for integers.
+
+Running "man test" will open the manual of test binary.
+
+Test is often invoked in "if" and "while" statements.
+Due to this reason, we cannot create a program called "test" and run it, as it will call the shell builtin.
+
+1) if else statements
+if [ ... ]
+then
+	#if code
+else
+	#else code
+fi
+#Notice that "fi" is "if" backwards. This is used again later with "case" and "esac".
+Also, if [ ... ] and then must be on different lines.Alternatively, the semicolon ";" can separate them;
+if [ ... ]; then
+	#Do something
+fi
+
+We can also use "elif", like this:
+if [ something ]; then
+	echo "Something"
+	elif [ something_else ]; then
+		echo "something_else"
+	else
+		echo "None of the above"
+fi
+
+2) Integer comparisions in shell:
+we use the below statements to compare:
+-lt, -gt, -le, -ge
+
+For string to get a non zero lenght:
+-n
+usage: if [ -n "$X" ] , here X is a string
+
+For a path of a real file
+-f
+usage: if [ -f "$X" ] , here X is a file path
+
+For a path of executable file
+-x
+usage: if [ -x "$X" ] , here X is a executable file path
+
+For newer than, when time is imp
+usage: if [ "$X" -nt "/etc/passwd" ] , here it will check if X is a file which is newer than /etc/passwd.
+We can use ";" to join 2 lines together. The backslash "\" serves a similar but opposite purpose. it tells shell that this is not the end of the line, but that the following line should be treated as a part of the current line. This is useful for readability. It is customary to indent the following line after a "\" or semicolon.
+
+

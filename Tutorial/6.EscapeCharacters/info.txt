@@ -1,0 +1,17 @@
+How to display "Hello "World""?
+echo "Hello \"World\""
+
+But if we use echo "Hello	"World"", it would be interpreted as such, 
+First parameter is "Hello	", second is World, and third is "".
+
+(*, ' are not taken literally.)
+
+E.g.
+echo * #lists all the files
+echo *.txt #Lists all .txt files
+echo "*" #Outputs *
+echo "*.txt" #Outputs .txt
+
+However ", $, ` and \ are still interpretd by ths shell.
+\ is used to mark special characters..
+

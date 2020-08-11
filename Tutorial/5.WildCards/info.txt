@@ -1,0 +1,10 @@
+E.g. Copying all .txt files from /tmp/a into /tmp/b.
+Usual syntax:
+$ cp /tmp/a/* /tmp/b/ #Copies all files
+$ cp /tmp/a/*.txt /tmp/b/ #Copies all .txt files
+$ cp /tmp/a/*.html /tmp/b/ #Copies all .html files
+
+E.g. Rename all .txt files to .bak files? How to do it?
+mv *.txt *.bak won't have the desired effect. 
+
+What is difference between "echo /tmp/a/*" and "ls /tmp/a/"? 
