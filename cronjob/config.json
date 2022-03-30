@@ -1,0 +1,15 @@
+{
+    "scopes": [
+        "https://www.googleapis.com/auth/drive"
+    ],
+    "token": "token.json",
+    "credentials": "credentials.json",
+    "logging_directory": "logs",
+    "api_name": "drive",
+    "api_version": "v3",
+    "drive_backup_directory": "my_backup_directory",
+    "password": "my_password_in_base64_encoded_format",
+    "secretsDirectory": "my_local_backup_directory",
+    "innerZipFileName": "my_zip_file_name.zip",
+    "zipFileName": "my_backup_file_name_without_extension"
+}
