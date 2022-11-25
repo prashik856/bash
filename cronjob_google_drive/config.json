@@ -1,0 +1,7 @@
+{
+  "logging_directory": "logs",
+  "password": "my_pass_in_base64",
+  "secretsDirectory": "my_directory",
+  "innerZipFileName": "innerzip.zip",
+  "zipFileName": "zipfilename.zip"
+}
