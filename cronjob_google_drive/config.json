@@ -3,5 +3,6 @@
   "password": "my_pass_in_base64",
   "secretsDirectory": "my_directory",
   "innerZipFileName": "innerzip.zip",
-  "zipFileName": "zipfilename.zip"
+  "zipFileName": "zipfilename.zip",
+  "syncDirectory": "directory_where_zip_directory_will_live_synced_by_google_drive"
 }
