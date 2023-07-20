@@ -1,0 +1,49 @@
+{
+  "apiVersion": "batch/v1",
+  "kind": "Job",
+  "metadata": {
+    "labels": {
+      "app": "pi",
+      "job-name": "prashik-job-test"
+    },
+    "name": "prashik-job-test"
+  },
+  "spec": {
+    "template": {
+      "metadata": {
+        "labels": {
+          "app": "pi",
+          "job-name": "prashik-job-test"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "args": [
+              "count=0; while [[ count -le 3 ]]; do echo count ${count}; sleep 5; count=$((count + 1)); done; exit 0;"
+            ],
+            "command": [
+              "/bin/sh",
+              "-c"
+            ],
+            "image": "iad.ocir.io/iotdev/stevedore/stevedore-tenant-workflow:1.1.3",
+            "imagePullPolicy": "Always",
+            "name": "prashik-job-test",
+            "resources": {},
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File"
+          }
+        ],
+        "dnsPolicy": "ClusterFirst",
+        "imagePullSecrets": [
+          {
+            "name": "docker-registry-credentials"
+          }
+        ],
+        "restartPolicy": "OnFailure",
+        "schedulerName": "default-scheduler",
+        "terminationGracePeriodSeconds": 30
+      }
+    }
+  }
+}
